@@ -1,6 +1,14 @@
-//JUST AN EXAMPLE, PLEASE USE YOUR OWN PICTURE!
-var imageAddr = "https://upload.wikimedia.org/wikipedia/commons/f/fe/Hungary%2C_Balatonf%C3%BCred%2C_Rabindranath_promenade_in_autumn_-_Tagore_statue.jpg"; 
-var downloadSize = 2202009; //bytes
+//JSpeedoMeter
+var imageAddr1 = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"; 
+var downloadSize1 = 3481.6; //bytes
+var imageAddr2 = "https://upload.wikimedia.org/wikipedia/commons/6/64/White_Rhino_Image_002.jpg"; 
+var downloadSize2 = 1570816; //bytes
+var imageAddr3 = "https://upload.wikimedia.org/wikipedia/commons/c/c5/1594_Orbis_Plancius_2%2C12_MB.jpg"; 
+var downloadSize3 = 2233466.88; //bytes
+var imageAddr4 = "https://upload.wikimedia.org/wikipedia/commons/c/c5/1594_Orbis_Plancius_2%2C12_MB.jpg";
+var downloadSize4 = 2222981; //bytes
+var imageAddr5 = "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bled_Castle_05.jpg";
+var downloadSize5 = 7340032; //bytes
 
 function ShowProgressMessage(msg) {
     if (console) {
@@ -42,7 +50,7 @@ if (window.addEventListener) {
     window.attachEvent('onload', InitiateSpeedDetection);
 }
 
-// 0th
+// 1st
 function MeasureConnectionSpeed() {
     var startTime, endTime;
     var download = new Image();
@@ -57,12 +65,12 @@ function MeasureConnectionSpeed() {
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
+    download.src = imageAddr1 + cacheBuster;
     
     function showResults() {
         
         var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
+        var bitsLoaded = downloadSize1 * 8;
         var speedBps = (bitsLoaded / duration).toFixed(2);
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
@@ -88,19 +96,19 @@ function MeasureConnectionSpeed1() {
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
+    download.src = imageAddr2 + cacheBuster;
     
     function showResults() {
         
         var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
+        var bitsLoaded = downloadSize2 * 8;
         var speedBps = (bitsLoaded / duration).toFixed(2);
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
         ShowProgressMessage([
             speedMbps + " MbPS"
         ]);
-        MeasureConnectionSpeed3();
+        MeasureConnectionSpeed2();
     }
 }
 // 3rd
@@ -118,12 +126,12 @@ function MeasureConnectionSpeed2() {
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
+    download.src = imageAddr3 + cacheBuster;
     
     function showResults() {
         
         var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
+        var bitsLoaded = downloadSize3 * 8;
         var speedBps = (bitsLoaded / duration).toFixed(2);
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
@@ -148,12 +156,12 @@ function MeasureConnectionSpeed3() {
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
+    download.src = imageAddr4 + cacheBuster;
     
     function showResults() {
         
         var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
+        var bitsLoaded = downloadSize4 * 8;
         var speedBps = (bitsLoaded / duration).toFixed(2);
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
@@ -163,7 +171,7 @@ function MeasureConnectionSpeed3() {
         MeasureConnectionSpeed4();
     }
 }
-// 5th
+//5th
 function MeasureConnectionSpeed4() {
     var startTime, endTime;
     var download = new Image();
@@ -178,168 +186,19 @@ function MeasureConnectionSpeed4() {
     
     startTime = (new Date()).getTime();
     var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
-    
-    function showResults() {
-        
-        var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        ShowProgressMessage([
-            speedMbps + " MbPS"
-        ]);
-        MeasureConnectionSpeed5();
-    }
-}
-// 6th
-function MeasureConnectionSpeed5() {
-    var startTime, endTime;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    
-    download.onerror = function (err, msg) {
-        ShowProgressMessage("ERROR");
-    }
-    
-    startTime = (new Date()).getTime();
-    var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
-    
-    function showResults() {
-        
-        var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        ShowProgressMessage([
-            speedMbps + " MbPS"
-        ]);
-        MeasureConnectionSpeed6();
-    }
-}
-// 7th
-function MeasureConnectionSpeed6() {
-    var startTime, endTime;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    
-    download.onerror = function (err, msg) {
-        ShowProgressMessage("ERROR");
-    }
-    
-    startTime = (new Date()).getTime();
-    var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
-    
-    function showResults() {
-        
-        var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        ShowProgressMessage([
-            speedMbps + " MbPS"
-        ]);
-        MeasureConnectionSpeed7();
-    }
-}
-// 8th
-function MeasureConnectionSpeed7() {
-    var startTime, endTime;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    
-    download.onerror = function (err, msg) {
-        ShowProgressMessage("ERROR");
-    }
-    
-    startTime = (new Date()).getTime();
-    var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
-    
-    function showResults() {
-        
-        var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        ShowProgressMessage([
-            speedMbps + " MbPS"
-        ]);
-        MeasureConnectionSpeed8();
-    }
-}
-// 9th
-function MeasureConnectionSpeed8() {
-    var startTime, endTime;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    
-    download.onerror = function (err, msg) {
-        ShowProgressMessage("ERROR");
-    }
-    
-    startTime = (new Date()).getTime();
-    var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
-    
-    function showResults() {
-        
-        var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
-        var speedBps = (bitsLoaded / duration).toFixed(2);
-        var speedKbps = (speedBps / 1024).toFixed(2);
-        var speedMbps = (speedKbps / 1024).toFixed(2);
-        ShowProgressMessage([
-            speedMbps + " MbPS"
-        ]);
-        MeasureConnectionSpeed9();
-    }
-}
-// 10th
-function MeasureConnectionSpeed9() {
-    var startTime, endTime;
-    var download = new Image();
-    download.onload = function () {
-        endTime = (new Date()).getTime();
-        showResults();
-    }
-    
-    download.onerror = function (err, msg) {
-        ShowProgressMessage("ERROR");
-    }
-    
-    startTime = (new Date()).getTime();
-    var cacheBuster = "?nnn=" + startTime;
-    download.src = imageAddr + cacheBuster;
+    download.src = imageAddr5 + cacheBuster;
     
     function showResults() {
         colors=['aqua'];
         document.getElementById("progress").style.color='black';
         var duration = (endTime - startTime) / 1000;
-        var bitsLoaded = downloadSize * 8;
+        var bitsLoaded = downloadSize5 * 8;
         var speedBps = (bitsLoaded / duration).toFixed(2);
         var speedKbps = (speedBps / 1024).toFixed(2);
         var speedMbps = (speedKbps / 1024).toFixed(2);
         ShowProgressMessage([
             speedMbps + " MbPS"
         ]);
+        
     }
 }
